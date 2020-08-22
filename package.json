@@ -1,0 +1,61 @@
+{
+  "name": "ACM_Fall_2020_Site",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.10.0",
+    "@material-ui/icons": "^4.9.1",
+    "@types/material-ui": "^0.21.7",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "@types/react-router-dom": "^5.1.5",
+    "cross-env": "^7.0.2",
+    "material-components-web": "^6.0.0",
+    "material-ui": "^0.20.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.1",
+    "serve": "^11.3.1",
+    "typescript": "~3.7.2"
+  },
+  "homepage": ".",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=\"development\" react-scripts start",
+    "start": "cross-env NODE_ENV=\"production\" serve -s build -l 80",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject",
+    "create-component": "python tools/create_component.py"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5"
+  }
+}
