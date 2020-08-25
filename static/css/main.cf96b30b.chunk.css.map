@@ -1,0 +1,1 @@
+{"version":3,"sources":["App.css"],"names":[],"mappings":"AAAA,KACE,QAAW,CACX,gEAA8C,CAC9C,wBACF,CAEA,OACE,4BACF","file":"main.cf96b30b.chunk.css","sourcesContent":["body {\n  margin: 0px;\n  background-image: url(\"../img/light_wool.png\");\n  background-repeat: repeat;\n}\n\n.debug {\n  background-color: rgba(0, 0, 0, 0);\n}\n"]}
