@@ -1,23 +1,30 @@
 import React, { useEffect, useState } from "react";
-import { Button, Grid, Typography, Divider, Chip } from "@material-ui/core";
+import { Container, Button, Grid, Typography, Chip } from "@material-ui/core";
 import { useTheme } from "@material-ui/core/styles";
 import FaceIcon from "@material-ui/icons/Face";
-import PetsIcon from '@material-ui/icons/Pets';
-import BugReportIcon from '@material-ui/icons/BugReport';
-import AdbIcon from '@material-ui/icons/Adb';
-import AppleIcon from '@material-ui/icons/Apple';
-import CakeIcon from '@material-ui/icons/Cake';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import PetsIcon from "@material-ui/icons/Pets";
+import BugReportIcon from "@material-ui/icons/BugReport";
+import AdbIcon from "@material-ui/icons/Adb";
+import AppleIcon from "@material-ui/icons/Apple";
+import CakeIcon from "@material-ui/icons/Cake";
 import Avatar from "src/img/avatar.png";
 import "src/css/App.css";
 
-const RAND_ICONS = [<FaceIcon/>, <PetsIcon/>, <BugReportIcon/>, <AdbIcon/>, <AppleIcon/>, <CakeIcon/>];
+const RAND_ICONS = [
+  <FaceIcon />,
+  <PetsIcon />,
+  <BugReportIcon />,
+  <AdbIcon />,
+  <AppleIcon />,
+  <CakeIcon />,
+];
 
 function Banner() {
   const theme = useTheme();
 
   const HEADER_TITLE = "WashU ACM";
-  const HEADER_SUBTITLE = "We are the Washington University in St. Louis' chapter of ACM, the Association for Computing Machinery.";
+  const HEADER_SUBTITLE =
+    "We are the Washington University in St. Louis' chapter of ACM, the Association for Computing Machinery.";
   const LIST_OF_FUN_STUFF_WE_DO = [
     "Fireside Chat",
     "Internship Panel",
@@ -27,9 +34,9 @@ function Banner() {
   ];
 
   const getRandomColor = () => {
-    const r = Math.floor(Math.random()*100+100);
-    const g = Math.floor(Math.random()*100+100);
-    const b = Math.floor(Math.random()*100+100);
+    const r = Math.floor(Math.random() * 100 + 100);
+    const g = Math.floor(Math.random() * 100 + 100);
+    const b = Math.floor(Math.random() * 100 + 100);
     return `#${r.toString(16)}${g.toString(16)}${b.toString(16)}`;
   };
 
@@ -39,67 +46,107 @@ function Banner() {
 
   return (
     <div
-      className="About-Banner"
-      style={{ marginTop: `${theme.spacing(4)}px`, marginBottom: `${theme.spacing(4)}px`}}
+      className="About-Banner debug"
+      style={{
+        height: "100vh",
+        width: "100%",
+        backgroundImage: `url(${Avatar})`,
+        backgroundPosition: "left",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
     >
-      <Grid container direction="row" spacing={2} alignItems="center">
-        <Grid item className="debug" style={{ padding: theme.spacing(1) }}>
-          <img
-            src={Avatar}
-            style={{
-              borderRadius: "50%",
-              height: "20vw",
-              width: "20vw",
-              minHeight: "96px",
-              minWidth: "96px",
-              maxHeight: "240px",
-              maxWidth: "240px",
-              objectFit: "cover",
-            }}
-          />
-        </Grid>
-        <Grid item xs={12} sm className="debug">
-          <Grid container direction="column">
+      <Grid
+        container
+        style={{
+          backgroundImage:
+            "radial-gradient(rgba(0, 12, 24, 0.7) 70%, rgba(0, 12, 24, 0.9))",
+          height: "100%",
+          width: "100%",
+        }}
+        direction="column"
+        spacing={0}
+        alignItems="center"
+        justify="center"
+      >
+        <Grid item>
+          <Container>
             <Grid
               item
-              className="debug"
-              style={{
-                marginBottom: theme.spacing(1),
-                padding: theme.spacing(1),
-              }}
+              container
+              direction="row"
+              spacing={0}
+              justify="center"
+              alignItems="center"
             >
-              <Typography variant="h3">{HEADER_TITLE}</Typography>
-            </Grid>
-            <Grid
-              item
-              className="debug"
-              style={{
-                marginBottom: theme.spacing(1),
-                padding: theme.spacing(1),
-              }}
-            >
-              <Typography variant="body1">{HEADER_SUBTITLE}</Typography>
-            </Grid>
-            <Grid item className="debug" style={{marginBottom: theme.spacing(1)}}>
-              <Button variant="contained" color="primary" onClick={redirectSignup}>Sign Me Up! ></Button>
-            </Grid>
-            <Divider />
-            <Grid item container direction="row" justify="flex-start">
-              <Grid item xs={12} sm={8}>
-                {LIST_OF_FUN_STUFF_WE_DO.map((text: string, i: number) => (
-                  <Chip
-                    key={`skill-chip-${i}`}
-                    size="small"
-                    icon={RAND_ICONS[Math.floor(Math.random()*RAND_ICONS.length)]}
-                    label={text}
-                    clickable
-                    color="primary"
-                    style={{ margin: "4px", color: "#FFFFFF", backgroundColor: getRandomColor() }}
-                  />
-                ))}
+              <Grid item xs={12} sm className="debug">
+                <Grid container direction="column">
+                  <Grid
+                    item
+                    className="debug"
+                    style={{
+                      marginBottom: theme.spacing(1),
+                      padding: theme.spacing(1),
+                    }}
+                  >
+                    <Typography color="textSecondary" variant="h1">
+                      {HEADER_TITLE}
+                    </Typography>
+                  </Grid>
+                  <Grid
+                    item
+                    className="debug"
+                    style={{
+                      marginBottom: theme.spacing(1),
+                      padding: theme.spacing(1),
+                    }}
+                  >
+                    <Typography color="textSecondary" variant="body1">
+                      {HEADER_SUBTITLE}
+                    </Typography>
+                  </Grid>
+                  <Grid
+                    item
+                    className="debug"
+                    style={{ marginBottom: theme.spacing(1) }}
+                  >
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      onClick={redirectSignup}
+                    >
+                      Sign Me Up! >
+                    </Button>
+                  </Grid>
+                  <Grid item container direction="row" justify="flex-start">
+                    <Grid item xs={12} sm={8}>
+                      {LIST_OF_FUN_STUFF_WE_DO.map(
+                        (text: string, i: number) => (
+                          <Chip
+                            key={`skill-chip-${i}`}
+                            size="small"
+                            icon={
+                              RAND_ICONS[
+                                Math.floor(Math.random() * RAND_ICONS.length)
+                              ]
+                            }
+                            label={text}
+                            clickable
+                            color="primary"
+                            style={{
+                              margin: "4px",
+                              color: "#FFFFFF",
+                              backgroundColor: getRandomColor(),
+                            }}
+                          />
+                        )
+                      )}
+                    </Grid>
+                  </Grid>
+                </Grid>
               </Grid>
             </Grid>
-          </Grid>
+          </Container>
         </Grid>
       </Grid>
     </div>

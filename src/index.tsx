@@ -6,7 +6,7 @@ import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
   <BrowserRouter
-    basename={process.env.NODE_ENV == "production" ? "/fall2020" : undefined}
+    basename={process.env.NODE_ENV === "production" ? "/fall2020" : undefined}
   >
     <App />
   </BrowserRouter>,

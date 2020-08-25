@@ -14,14 +14,12 @@ function App() {
     <main>
       <div className="App">
         <ThemeProvider theme={AppTheme}>
-          <Container>
-            <Switch>
-              <Route path="/" exact>
-                <About />
-              </Route>
-              <Route component={NotFound} />
-            </Switch>
-          </Container>
+          <Switch>
+            <Route path="/" exact>
+              <About />
+            </Route>
+            <Route component={NotFound} />
+          </Switch>
         </ThemeProvider>
       </div>
     </main>

@@ -22,6 +22,10 @@ const AppTheme = createMuiTheme({
       main: SECONDARY_COLOR,
       contrastText: WHITE_TEXT_COLOR,
     },
+    text: {
+      primary: DEFAULT_TEXT_COLOR,
+      secondary: WHITE_TEXT_COLOR,
+    },
   },
   typography: {
     body2: {
