@@ -105,7 +105,7 @@ function Banner() {
                       marginBottom: theme.spacing(1),
                       padding: theme.spacing(1),
                       maxHeight: "200px",
-                      overflowY: "scroll",
+                      overflowY: "auto",
                     }}
                   >
                     <MatrixTextType
