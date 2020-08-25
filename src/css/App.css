@@ -7,3 +7,7 @@ body {
 .debug {
   background-color: rgba(0, 0, 0, 0);
 }
+
+.monospaceRoboto {
+  font-family: "Roboto Mono", monospace !important;
+}

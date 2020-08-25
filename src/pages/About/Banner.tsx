@@ -8,6 +8,7 @@ import AdbIcon from "@material-ui/icons/Adb";
 import AppleIcon from "@material-ui/icons/Apple";
 import CakeIcon from "@material-ui/icons/Cake";
 import Avatar from "src/img/avatar.png";
+import MatrixTextType from "src/components/MatrixTextType";
 import "src/css/App.css";
 
 const RAND_ICONS = [
@@ -24,7 +25,7 @@ function Banner() {
 
   const HEADER_TITLE = "WashU ACM";
   const HEADER_SUBTITLE =
-    "We are the Washington University in St. Louis' chapter of ACM, the Association for Computing Machinery.";
+    "We are the Washington University in St. Louis' chapter of ACM, the Association for Computing Machinery. Every semester, we organize all sorts of events: Tuesday/Thursday Tech Talks, Programming Competition, Intership Panel, Course Registration Discussion, and Fireside Chat with CSE department faculties. We welcome every student with interest in computing or computer science. Come and join us to get notified of our news and upcoming events!";
   const LIST_OF_FUN_STUFF_WE_DO = [
     "Fireside Chat",
     "Internship Panel",
@@ -60,7 +61,7 @@ function Banner() {
         container
         style={{
           backgroundImage:
-            "radial-gradient(rgba(0, 12, 24, 0.7) 70%, rgba(0, 12, 24, 0.9))",
+            "radial-gradient(rgba(0, 12, 24, 0.8) 70%, rgba(0, 12, 24, 0.95))",
           height: "100%",
           width: "100%",
         }}
@@ -89,9 +90,13 @@ function Banner() {
                       padding: theme.spacing(1),
                     }}
                   >
-                    <Typography color="textSecondary" variant="h1">
-                      {HEADER_TITLE}
-                    </Typography>
+                    <MatrixTextType
+                      className="monospaceRoboto"
+                      seconds={2}
+                      color="textSecondary"
+                      variant="h1"
+                      text={HEADER_TITLE}
+                    />
                   </Grid>
                   <Grid
                     item
@@ -101,25 +106,22 @@ function Banner() {
                       padding: theme.spacing(1),
                     }}
                   >
-                    <Typography color="textSecondary" variant="body1">
-                      {HEADER_SUBTITLE}
-                    </Typography>
+                    <MatrixTextType
+                      className="monospaceRoboto"
+                      seconds={3}
+                      color="textSecondary"
+                      variant="body1"
+                      text={HEADER_SUBTITLE}
+                    />
                   </Grid>
                   <Grid
                     item
-                    className="debug"
-                    style={{ marginBottom: theme.spacing(1) }}
+                    container
+                    direction="row"
+                    justify="flex-start"
+                    alignItems="center"
                   >
-                    <Button
-                      variant="contained"
-                      color="primary"
-                      onClick={redirectSignup}
-                    >
-                      Sign Me Up! >
-                    </Button>
-                  </Grid>
-                  <Grid item container direction="row" justify="flex-start">
-                    <Grid item xs={12} sm={8}>
+                    <Grid item xs={12} sm={9}>
                       {LIST_OF_FUN_STUFF_WE_DO.map(
                         (text: string, i: number) => (
                           <Chip
@@ -141,6 +143,22 @@ function Banner() {
                           />
                         )
                       )}
+                    </Grid>
+                    <Grid
+                      item
+                      xs={12}
+                      sm={3}
+                      className="debug"
+                      style={{ marginBottom: theme.spacing(1) }}
+                    >
+                      <Button
+                        variant="contained"
+                        color="primary"
+                        fullWidth={true}
+                        onClick={redirectSignup}
+                      >
+                        Sign Me Up! >
+                      </Button>
                     </Grid>
                   </Grid>
                 </Grid>

@@ -1,3 +1,5 @@
+import { ALPHANUMERIC, ALPHANUMERICSYMBOLS } from "src/constants";
+
 // Get json from response
 const getJson = (res: any) => {
   if (res.ok) {
@@ -76,4 +78,25 @@ export const urlGetJson = (param: string) => {
       return JSON.parse(decodedJsonString);
     }
   }
+};
+
+// Generate random 'matrix-style' string from given original
+// preserving an initial starting number of characters
+export const maskRandString = (
+  origString: string,
+  typedChars: number,
+  allowableCharacters = ALPHANUMERICSYMBOLS
+) => {
+  const origLength = origString.length;
+  let randString = "";
+  for (const c of origString) {
+    if (c !== " ") {
+      randString += allowableCharacters.charAt(
+        Math.floor(Math.random() * allowableCharacters.length)
+      );
+    } else randString += " ";
+  }
+  return origString
+    .substring(0, typedChars)
+    .concat("", randString.substring(typedChars, origLength));
 };
