@@ -42,7 +42,7 @@ function Banner() {
   };
 
   const redirectSignup = () => {
-    alert("Redirect to Google Forms for signup");
+    window.open("https://forms.gle/bu3n1JQdP1WQew6W6", "_blank");
   };
 
   return (
