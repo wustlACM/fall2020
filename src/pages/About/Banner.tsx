@@ -9,6 +9,7 @@ import AppleIcon from "@material-ui/icons/Apple";
 import CakeIcon from "@material-ui/icons/Cake";
 import Avatar from "src/img/avatar.png";
 import MatrixTextType from "src/components/MatrixTextType";
+import ParticleSimulation from "./ParticleSimulation";
 import "src/css/App.css";
 
 const RAND_ICONS = [
@@ -57,13 +58,28 @@ function Banner() {
         backgroundSize: "cover",
       }}
     >
-      <Grid
-        container
+      <div
         style={{
           backgroundImage:
             "radial-gradient(rgba(0, 12, 24, 0.8) 70%, rgba(0, 12, 24, 0.95))",
           height: "100%",
           width: "100%",
+          top: "0px",
+          left: "0px",
+          position: "absolute",
+        }}
+      />
+      <ParticleSimulation
+        style={{ top: "0px", left: "0px", position: "absolute" }}
+      />
+      <Grid
+        container
+        style={{
+          height: "100%",
+          width: "100%",
+          top: "0px",
+          left: "0px",
+          position: "absolute",
         }}
         direction="column"
         spacing={0}

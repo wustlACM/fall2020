@@ -47,7 +47,6 @@ function MatrixTextType({
 
   useEffect(() => {
     setCurText(maskRandString(text, numDemasked));
-    console.log(numDemasked);
   }, [numDemasked]);
 
   return (
